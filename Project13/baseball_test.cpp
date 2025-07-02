@@ -5,7 +5,7 @@ using namespace testing;
 
 class BaseballGameFixture : public Test {
 public:
-	Baseball game;
+	Baseball game{ "123" };
 	void assertIllegalArgument(std::string guessNumber) {
 		try {
 			game.guess(guessNumber);

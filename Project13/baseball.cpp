@@ -9,6 +9,7 @@ struct GuessResult {
 
 class Baseball {
 public:
+	Baseball(const std::string& str) : answer{ str } {}
 	bool itHasDup(const std::string& str) {
 		for (int c1 = 0; c1 < str.length(); c1++) {
 			for (int c2 = c1 + 1; c2 < str.length(); c2++) {
@@ -45,5 +46,5 @@ public:
 		return res;
 	}
 private:
-	std::string answer = "123";
+	std::string answer;
 };
