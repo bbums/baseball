@@ -25,6 +25,14 @@ TEST_F(BaseballGameFixture, ThrowExceptionWhenInvalidCase) {
 	assertIllegalArgument(std::string("121"));
 }
 
+TEST_F(BaseballGameFixture, SuccessCase) {
+	GuessResult result = game.guess(std::string("123"));
+
+	EXPECT_TRUE(result.solved);
+	EXPECT_EQ(3, result.strikes);
+	EXPECT_EQ(0, result.balls);
+}
+
 int main() {
 	::testing::InitGoogleMock();
 	return RUN_ALL_TESTS();
