@@ -13,6 +13,11 @@ TEST(BaseballGame, ThrowExceptionWhenInvalidChar) {
 	EXPECT_THROW(game.guess(std::string("12s")), std::invalid_argument);
 }
 
+TEST(BaseballGame, ThrowExceptionWhenInvalidCase) {
+	Baseball game;
+	EXPECT_THROW(game.guess(std::string("121")), std::invalid_argument);
+}
+
 int main() {
 	::testing::InitGoogleMock();
 	return RUN_ALL_TESTS();
